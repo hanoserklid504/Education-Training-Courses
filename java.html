@@ -1,0 +1,54 @@
+<html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .bebe{background-color: rgb(195, 154, 154);margin: auto;padding: 0;width: 1000;height: 1000px;}
+  </style>
+  <script>
+var players = []
+players[0] = " Shahad Ahmmad abusalen";
+players[1] = "Haneen Khalid Alnasser";
+players[2] = " Layan Mohammed Alharbi";
+players[3] = " Ghada Nazazl Alenazi";
+
+
+function tournament(amount) {
+  var randomOrder = shuffle(players)
+  var count = Math.min(amount, randomOrder.length)
+  for (var i = 0; i < count; ++i) {
+    document.getElementById("player" + (i + 1)).textContent = randomOrder[i]}
+}
+
+
+function shuffle(array) {
+  var currentIndex = array.length,
+    temporaryValue, randomIndex;
+
+  while (0 !== currentIndex) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+</script>
+</head>
+<body onfocus="tournament(4)">
+  <div class="bebe">
+<center>
+<p id="player1"></p>
+<br>
+<p id="player2"></p>
+<br>
+<p id="player3"></p>
+<br>
+<p id="player4"></p>
+</center>
+</div>
+</body>
+</html>
